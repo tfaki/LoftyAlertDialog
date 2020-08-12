@@ -67,7 +67,7 @@ LoftyAlertView.Builder(this)
                 .isTwoButton(true)
                 .show()
 ```
-If you want customize in MainActivity.java
+If you want customize, you must make setChangeable true in MainActivity.java
 ```
    LoftyAlertView.Builder(this)
                 .setChangeable(true)
