@@ -81,4 +81,4 @@ If you want customize in MainActivity.java
                 .isTwoButton(true)
                 .show()
 ```
-Good Coding !
+Happy Coding !
