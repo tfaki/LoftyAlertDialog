@@ -1,5 +1,7 @@
 # LoftyAlertDialog
 
+You can show them using the library's own statuses, you can customize it yourself if you want.
+
 
 ### How to Install ?
 
