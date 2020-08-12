@@ -81,4 +81,10 @@ If you want customize, you must make setChangeable true in YourActivity.java
                 .isTwoButton(true)
                 .show()
 ```
+
+### Usable AlertTypeState
+```
+WARNING, INFO, ERROR or Customize
+```
+
 Happy Coding !
