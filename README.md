@@ -67,5 +67,18 @@ LoftyAlertView.Builder(this)
                 .isTwoButton(true)
                 .show()
 ```
-
+If you want customize in MainActivity.java
+```
+   LoftyAlertView.Builder(this)
+                .setChangeable(true)
+                .imageResId(R.drawable.you_want_image)
+                .colorId(R.color.whatever_you_want_color)
+                .rightButtonAction { 
+                    // whatever you want
+                }
+                .headerTitle("title")
+                .alertMessage("message")
+                .isTwoButton(true)
+                .show()
+```
 Good Coding !
