@@ -28,7 +28,7 @@ implementation 'com.github.TalhaFaki:LoftyAlertDialog:1.0.0'
 
 In this example, you can show alertdialog with the LoftyAlertDialog.
 
-Show Default in MainActivity.java
+Show Default in YourActivity.java
 
 ```
  LoftyAlertView.Builder(this)
@@ -37,7 +37,7 @@ Show Default in MainActivity.java
                 .show()
 ```
 
-Show two buttons in MainActivity.java
+Show two buttons in YourActivity.java
 
 ```
 LoftyAlertView.Builder(this)
@@ -46,7 +46,7 @@ LoftyAlertView.Builder(this)
                 .isTwoButton(true)
                 .show()
 ```
-If use alert state , you must setChangeable false  in MainActivity.java
+If use alert state , you must setChangeable false  in YourActivity.java
 ```
 LoftyAlertView.Builder(this)
                 .alertType(AlertTypeState.ERROR)
@@ -56,7 +56,7 @@ LoftyAlertView.Builder(this)
                 .isTwoButton(true)
                 .show()
 ```
-If you want animation, you can add this line in MainActivity.java
+If you want animation, you can add this line in YourActivity.java
 ```
 LoftyAlertView.Builder(this)
                 .alertType(AlertTypeState.ERROR)
@@ -67,7 +67,7 @@ LoftyAlertView.Builder(this)
                 .isTwoButton(true)
                 .show()
 ```
-If you want customize, you must make setChangeable true in MainActivity.java
+If you want customize, you must make setChangeable true in YourActivity.java
 ```
    LoftyAlertView.Builder(this)
                 .setChangeable(true)
