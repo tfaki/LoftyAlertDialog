@@ -1,0 +1,3 @@
+include ':LoftyAlertDialog'
+include ':app'
+rootProject.name = "LoftyAlertView"
