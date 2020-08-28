@@ -22,7 +22,9 @@ class LoftyAlertView(
     val rightButtonAction: (() -> Unit)? = null,
     val leftButtonAction: (() -> Unit)? = null,
     val changeable: Boolean,
-    val animation: Boolean) : AlertDialog(context) {
+    val animation: Boolean,
+    val onDismissCallback: (() -> Unit)? = null,
+    val onShownCallback: (() -> Unit)? = null) : AlertDialog(context) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +44,14 @@ class LoftyAlertView(
         leftButton.setOnClickListener {
             leftButtonAction?.invoke()
             dismiss()
+        }
+
+        setOnDismissListener {
+            onDismissCallback?.invoke()
+        }
+
+        setOnShowListener {
+            onShownCallback?.invoke()
         }
 
         when(alertType){
@@ -112,6 +122,8 @@ class LoftyAlertView(
         private var animation: Boolean = false
         private var rightButtonAction: (() -> Unit)? = null
         private var leftButtonAction: (() -> Unit)? = null
+        private var onDismissCallback: (() -> Unit)? = null
+        private var onShownCallback: (() -> Unit)? = null
 
         fun layoutId(layoutId: Int) = apply { this.layoutId = layoutId }
         fun imageResId(imageResId: Int) = apply { this.imageResId = imageResId }
@@ -127,6 +139,8 @@ class LoftyAlertView(
         fun setAnimation(animation: Boolean) = apply { this.animation = animation }
         fun rightButtonAction(rightButtonAction: (() -> Unit)) = apply { this.rightButtonAction = rightButtonAction }
         fun leftButtonAction(leftButtonAction: (() -> Unit)?) = apply { this.leftButtonAction = leftButtonAction }
+        fun onDismissCallback(onDismissCallback: (() -> Unit)?) = apply { this.onDismissCallback = onDismissCallback }
+        fun onShownCallback(onShownCallback: (() -> Unit)?) = apply { this.onShownCallback = onShownCallback }
 
         fun show() = LoftyAlertView(
             context,
@@ -143,7 +157,9 @@ class LoftyAlertView(
             rightButtonAction,
             leftButtonAction,
             changeable,
-            animation
+            animation,
+            onDismissCallback,
+            onShownCallback
         ).show()
     }
 
